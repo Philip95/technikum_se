@@ -5,12 +5,16 @@ services:
     build:
       context: .
     container_name: app
+    ports:
+      - "8080:8080"
+    expose:
+      - 5432
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
-      - SPRING_DATASOURCE_USERNAME=compose-postgres
-      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-mysql
+      - SPRING_DATASOURCE_USERNAME=compose-mysql
+      - SPRING_DATASOURCE_PASSWORD=compose-mysql
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
   db:
     image: mysql:5.7
