@@ -57,7 +57,10 @@ that they are the same), because the same tools are being used.
 
 ## XI. Logs
 
-Logback was added to the application for writing the logs in a file named app.log. It will be generated, when a request 
+Logback was added to the application for writing the logs in a file named app.log. Unfortunately, Spring doesn't really 
+write specific log files. Therefore, some config had to been made, which can be seen in the logback.xml file.
+
+app.log will be generated, when a request 
 is being sent. Since I don't want it to push to GitHub I added the file to the .gitignore. It is a very, very basic
 config for Logback. I added some log statements throughout the code.
 
