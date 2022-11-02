@@ -1,7 +1,7 @@
 package com.example.technikum.controller;
 
-import com.example.technikum.service.Services;
-import com.github.javafaker.Faker;
+import com.example.technikum.model.Job;
+import com.example.technikum.service.JobService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,23 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class Controller {
 
     @Autowired
-    private Services services;
+    private JobService service;
+
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
-    @GetMapping("/helloPokemon")
-    public String fakcer() {
-        Faker faker = new Faker();
-        for (int i = 0; i <= 10; i++) {
-            String name = faker.job().title() + ", " + faker.job().position() + ", " + faker.job().field() + ", " + faker.job().keySkills() +  ", " + faker.job().seniority();
-            logger.info("Name des Jobs:" + name);
-        }
-
-        return "Hallo";
+    @GetMapping("/jobs")
+    public List<Job> getAllJobs() {
+        return service.getJobs();
     }
 
 }

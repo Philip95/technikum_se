@@ -8,41 +8,41 @@ import java.util.Date;
 
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 @ToString
 @Getter
 @Entity
-@Table(name = "job")
 public class Job {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "job_id")
-    private Long id;
+    @Column(name = "id")
+    private Long job_id;
 
     @NonNull
-    @Column(name = "job_title")
-    private String title;
+    @Column(name = "title")
+    private String job_title;
 
     @NonNull
-    @Column(name = "job_position")
-    private String position;
+    @Column(name = "position")
+    private String job_position;
 
     @NonNull
-    @Column(name = "job_field")
-    private String field;
+    @Column(name = "field")
+    private String job_field;
 
     @NonNull
-    @Column(name = "job_keySkills")
-    private String keySkills;
+    @Column(name = "keySkills")
+    private String job_keySkills;
 
     @NonNull
-    @Column(name = "job_applicationTime")
-    private Date applicationTime;
+    @Column(name = "applicationTime")
+    private Date job_applicationTime;
 
-    @Column(name = "job_seniority")
-    private String seniority;
+    @Column(name = "seniority")
+    private String job_seniority;
 
-    @Column(name = "job_salary")
-    private BigDecimal salary;
+    @Column(name = "salary")
+    private BigDecimal job_salary;
 
 }
