@@ -18,6 +18,8 @@ dependencies {
 	implementation group: 'org.yaml', name: 'snakeyaml', version: '1.26'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.26'
+
 }
 
 tasks.named('test') {
