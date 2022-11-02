@@ -1,7 +1,7 @@
 # Implementation of the 12 factors
 ## I. Codebase
 
-This factor was achieved by pushing the codebase into a repository on Github ([Link to Repository](https://github.com/Philip95/technikum_se)).
+This factor was achieved by pushing the codebase into a repository on GitHub ([Link to Repository](https://github.com/Philip95/technikum_se)).
 Therefore, I have on codebase.
 
 ## II. Dependencies
@@ -11,7 +11,7 @@ isolation of the dependencies. Furthermore, the version of the dependencies can 
 
 ## III. Config
 
-For the config factor, I created an .env file, which I will also push to Github as a reference. Normally, I would never
+For the config factor, I created an .env file, which I will also push to GitHub as a reference. Normally, I would never
 push the .env file to Git. But since the file will be pretty much the same for all machines, I decided to leave it there
 and to not create an example file, which you have to adapt. In this .env file I will write the config for the MySQL
 container, such as user, password, connection string etc. 
