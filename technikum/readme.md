@@ -17,6 +17,7 @@ After that, you need to start just the db-1 container and connect to the databas
 or the Terminal is up to you.
 
 There you can create the ``root`` user. After connecting to the database you have to execute the AdminUser.sql file.
+This file generates the database, a new user and grant the privileges.
 With this step, the setup is completed. 
 
 You can stop the database image now and start the whole microservice with ``docker-compose up``. Of course,
