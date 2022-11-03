@@ -11,10 +11,9 @@ isolation of the dependencies. Furthermore, the version of the dependencies can 
 
 ## III. Config
 
-For the config factor, I created an .env file, which I will also push to GitHub as a reference. Normally, I would never
-push the .env file to Git. But since the file will be pretty much the same for all machines, I decided to leave it there
-and to not create an example file, which you have to adapt. In this .env file I will write the config for the MySQL
-container, such as user, password, connection string etc. 
+For the config factor, I wanted to create environment variables, but it didn't quite work out.
+So I tried to solve this twelve factor part, but was failing on the way.
+
 
 ## IV. Backing services
 
@@ -25,12 +24,14 @@ be the same.
 
 ## V. Build, release, run
 
-tbd
+Basically this point is achieved with using Docker to build images from the source code. After building the image 
+it will be pushed with a tag. In my case it was 'latest'. In a last step the image can be pulled from the registry and
+run as a container.
 
 ## VI. Processes
 
 All data which needs to be stored is stored in the database. 
-tbd
+There are no sticky sessions in the code. 
 
 ## VII. Port Binding
 
@@ -66,4 +67,6 @@ config for Logback. I added some log statements throughout the code.
 
 ## XII. Admin processes
 
-tbd
+I am not quite sure, if I understood this right, but I designed a REST API where a user can send requests to. So they can
+check for specific jobs by searching after an ID or delete a job and inserting new jobs. In this case, they are random, 
+but of course it could be possible to extend the application such that one can send an Excel file or something similar. 
