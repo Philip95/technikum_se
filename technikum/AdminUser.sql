@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS app;
+
 use app;
 
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
