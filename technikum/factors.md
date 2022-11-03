@@ -26,7 +26,7 @@ be the same.
 
 Basically this point is achieved with using Docker to build images from the source code. After building the image 
 it will be pushed with a tag. In my case it was 'latest'. In a last step the image can be pulled from the registry and
-run as a container.
+run as a container. I also used Dockerhub to push the containers.
 
 ## VI. Processes
 
