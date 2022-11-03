@@ -4,12 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @RequiredArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 @Getter
 @Entity
 public class Job {
@@ -17,32 +18,32 @@ public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long job_id;
+    private Long id;
 
     @NonNull
     @Column(name = "title")
-    private String job_title;
+    private String title;
 
     @NonNull
     @Column(name = "position")
-    private String job_position;
+    private String position;
 
     @NonNull
     @Column(name = "field")
-    private String job_field;
+    private String field;
 
     @NonNull
     @Column(name = "keySkills")
-    private String job_keySkills;
+    private String keySkills;
 
     @NonNull
     @Column(name = "applicationTime")
-    private Date job_applicationTime;
+    private LocalDate applicationTime;
 
     @Column(name = "seniority")
-    private String job_seniority;
+    private String seniority;
 
     @Column(name = "salary")
-    private BigDecimal job_salary;
+    private BigDecimal salary;
 
 }
