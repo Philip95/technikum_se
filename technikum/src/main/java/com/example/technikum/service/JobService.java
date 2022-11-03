@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.example.technikum.utility.Helper.randomBigDecimal;
 import static com.example.technikum.utility.Helper.randomDate;
@@ -29,17 +30,15 @@ public class JobService {
         return jobRepository.findAll();
     }
 
+    public Optional<Job> getJob(Long id) {
+        return jobRepository.findById(id);
+    }
+
     public void deleteJob(Long jobId) {
         jobRepository.deleteById(jobId);
     }
     public Job createJob(Job job) {
         return jobRepository.save(job);
-    }
-
-    public Job updateEmployee(Long jobId, Job employeeDetails) {
-        Job emp = jobRepository.findById(jobId).get();
-
-        return jobRepository.save(emp);
     }
 
     public Job insertRandomJobs() {

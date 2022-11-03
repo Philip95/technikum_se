@@ -38,3 +38,24 @@ METHOD: ``GET``, ENDPOINT:``/randomJobs``
 
 With this call 100 random generated jobs will be inserted into the database.
 
+### Get all jobs
+
+METHOD: ``GET``, ENDPOINT: ``/jobs``
+
+Returns all jobs available as JSON.
+
+### Filter for job by id
+
+METHOD: ``GET``, ENDPOINT: ``/job/{id}``
+
+``id`` ... the id for a certain job.
+
+Returns a certain job filtered by a given id.
+
+### Delete job by id
+
+METHOD: ``DELETE``, ENDPOINT: ``/jobs/{id}``
+
+``id`` ... the id for a certain job.
+
+Delete the job with given id.

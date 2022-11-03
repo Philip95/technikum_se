@@ -6,12 +6,10 @@ import com.example.technikum.service.JobService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -32,10 +30,14 @@ public class Controller {
         return service.insertRandomJobs();
     }
 
+    @GetMapping("/job/{jobId}")
+    public Optional<Job> getJobById(@PathVariable(value = "jobId") Long id) {
+        return service.getJob(id);
+    }
 
-    @RequestMapping(value="/hello", method= RequestMethod.GET)
-    public String hello() {
-        return "Hello";
+    @RequestMapping(value="/jobs/{jobId}", method=RequestMethod.DELETE)
+    public void deleteEmployees(@PathVariable(value = "jobId") Long id) {
+        service.deleteJob(id);
     }
 
 }
